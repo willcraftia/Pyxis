@@ -49,7 +49,7 @@ namespace Pyxis
             moduleMap.Clear();
         }
 
-        public void Build(ref ModuleBundleDefinition definition)
+        public void Build(ModuleBundleDefinition definition)
         {
             if (definition.Modules == null || definition.Modules.Length == 0)
                 return;

@@ -130,13 +130,13 @@ namespace Pyxis
             return externalReferenceMap[module];
         }
 
-        public void BuildDefinition(out ModuleBundleDefinition definition)
+        public ModuleBundleDefinition Build()
         {
             AddNamelessModules();
 
-            definition = new ModuleBundleDefinition();
+            var definition = new ModuleBundleDefinition();
 
-            if (modules.Count == 0) return;
+            if (modules.Count == 0) return definition;
 
             definition.Modules = new ModuleDefinition[modules.Count];
             for (int i = 0; i < modules.Count; i++)
@@ -196,6 +196,8 @@ namespace Pyxis
 
                 definition.Modules[i].Properties = workingList.ToArray();
             }
+
+            return definition;
         }
 
         void AddNamelessModules()
