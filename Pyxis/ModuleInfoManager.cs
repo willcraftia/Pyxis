@@ -22,7 +22,7 @@ namespace Pyxis
 
         #endregion
 
-        static readonly ModuleTypeHandler defaultTypeHandler = new ModuleTypeHandler();
+        static readonly DefaultModuleTypeHandler defaultTypeHandler = new DefaultModuleTypeHandler();
 
         ModuleTypeRegistory typeRegistory;
 

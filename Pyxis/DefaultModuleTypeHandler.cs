@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public sealed class ModuleTypeHandler : IModuleTypeHandler
+    public class DefaultModuleTypeHandler : IModuleTypeHandler
     {
         static readonly PropertyInfo[] emptryProperties = new PropertyInfo[0];
 
@@ -64,17 +64,17 @@ namespace Pyxis
             return properties;
         }
 
-        public object CreateInstance(Type type)
+        public virtual object CreateInstance(Type type)
         {
             return type.InvokeMember(null, BindingFlags.CreateInstance, null, null, null);
         }
 
-        bool IsValidProperty(PropertyInfo property)
+        protected virtual bool IsValidProperty(PropertyInfo property)
         {
             return property.CanRead && property.CanWrite && !IsIgnored(property);
         }
 
-        bool IsIgnored(PropertyInfo property)
+        protected virtual bool IsIgnored(PropertyInfo property)
         {
             return Attribute.IsDefined(property, typeof(IgnoreModuleMemberAttribute));
         }
