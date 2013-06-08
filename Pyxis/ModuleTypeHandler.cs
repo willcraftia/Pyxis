@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public sealed class TypeHandler : ITypeHandler
+    public sealed class ModuleTypeHandler : IModuleTypeHandler
     {
         static readonly PropertyInfo[] emptryProperties = new PropertyInfo[0];
 
@@ -76,7 +76,7 @@ namespace Pyxis
 
         bool IsIgnored(PropertyInfo property)
         {
-            return Attribute.IsDefined(property, typeof(PropertyIgnoredAttribute));
+            return Attribute.IsDefined(property, typeof(IgnoreModuleMemberAttribute));
         }
     }
 }

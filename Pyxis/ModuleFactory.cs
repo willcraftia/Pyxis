@@ -13,7 +13,7 @@ namespace Pyxis
 
         Dictionary<string, object> moduleMap;
 
-        public List<IPropertyHandler> PropertyHandlers { get; private set; }
+        public List<IModulePropertyHandler> PropertyHandlers { get; private set; }
 
         public object this[string moduleName]
         {
@@ -32,8 +32,8 @@ namespace Pyxis
 
             this.moduleInfoManager = moduleInfoManager;
 
-            PropertyHandlers = new List<IPropertyHandler>();
-            PropertyHandlers.Add(DefaultPropertyHandler.Instance);
+            PropertyHandlers = new List<IModulePropertyHandler>();
+            PropertyHandlers.Add(DefaultModulePropertyHandler.Instance);
             PropertyHandlers.Add(new ModulePropertyHandler(this));
         }
 
@@ -92,7 +92,7 @@ namespace Pyxis
             }
         }
 
-        void PopulateProperty(ModuleInfo moduleInfo, object module, ref PropertyDefinition propertyDefinition)
+        void PopulateProperty(ModuleInfo moduleInfo, object module, ref ModulePropertyDefinition propertyDefinition)
         {
             var propertyName = propertyDefinition.Name;
             if (string.IsNullOrEmpty(propertyName)) return;

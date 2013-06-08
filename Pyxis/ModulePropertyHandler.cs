@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public sealed class ModulePropertyHandler : IPropertyHandler
+    public sealed class ModulePropertyHandler : IModulePropertyHandler
     {
         ModuleFactory moduleFactory;
 

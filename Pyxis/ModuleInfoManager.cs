@@ -22,11 +22,11 @@ namespace Pyxis
 
         #endregion
 
-        static readonly TypeHandler defaultTypeHandler = new TypeHandler();
+        static readonly ModuleTypeHandler defaultTypeHandler = new ModuleTypeHandler();
 
         ModuleTypeRegistory typeRegistory;
 
-        Dictionary<Type, ITypeHandler> typeHandlerMap;
+        Dictionary<Type, IModuleTypeHandler> typeHandlerMap;
 
         ModuleInfoCollection moduleInfoCache = new ModuleInfoCollection();
 
@@ -37,12 +37,12 @@ namespace Pyxis
             this.typeRegistory = typeRegistory;
         }
 
-        public void AddTypeHandler(Type type, ITypeHandler typeHandler)
+        public void AddTypeHandler(Type type, IModuleTypeHandler typeHandler)
         {
             if (type == null) throw new ArgumentNullException("type");
             if (typeHandler == null) throw new ArgumentNullException("typeHandler");
 
-            if (typeHandlerMap == null) typeHandlerMap = new Dictionary<Type, ITypeHandler>();
+            if (typeHandlerMap == null) typeHandlerMap = new Dictionary<Type, IModuleTypeHandler>();
             typeHandlerMap[type] = typeHandler;
         }
 
@@ -73,9 +73,9 @@ namespace Pyxis
             return typeRegistory.GetTypeDefinitionName(moduleInfo.ModuleType);
         }
 
-        ITypeHandler GetTypeHandler(Type type)
+        IModuleTypeHandler GetTypeHandler(Type type)
         {
-            ITypeHandler typeHandler;
+            IModuleTypeHandler typeHandler;
             if (typeHandlerMap == null || !typeHandlerMap.TryGetValue(type, out typeHandler))
                 typeHandler = defaultTypeHandler;
 

@@ -7,7 +7,7 @@ using System;
 namespace Pyxis
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public sealed class PropertyIgnoredAttribute : Attribute
+    public sealed class IgnoreModuleMemberAttribute : Attribute
     {
     }
 }

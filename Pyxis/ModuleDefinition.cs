@@ -20,7 +20,7 @@ namespace Pyxis
 
         [XmlArrayItem("Property")]
         [DefaultValue(null)]
-        public PropertyDefinition[] Properties;
+        public ModulePropertyDefinition[] Properties;
 
         [XmlAttribute]
         [DefaultValue(null)]

@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public interface ITypeHandler
+    public interface IModuleTypeHandler
     {
         PropertyInfo[] GetProperties(Type type);
 

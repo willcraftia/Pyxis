@@ -16,7 +16,7 @@ namespace Pyxis
 
         static readonly object[] emptyDefaultValues = new object[0];
 
-        ITypeHandler typeHandler;
+        IModuleTypeHandler typeHandler;
 
         PropertyInfo[] properties;
 
@@ -31,7 +31,7 @@ namespace Pyxis
             get { return properties.Length; }
         }
 
-        public ModuleInfo(Type moduleType, ITypeHandler typeHandler)
+        public ModuleInfo(Type moduleType, IModuleTypeHandler typeHandler)
         {
             if (moduleType == null) throw new ArgumentNullException("moduleType");
             if (typeHandler == null) throw new ArgumentNullException("typeHandler");

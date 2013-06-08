@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Pyxis
 {
-    public struct PropertyDefinition
+    public struct ModulePropertyDefinition
     {
         [XmlAttribute]
         [DefaultValue(null)]

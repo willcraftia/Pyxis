@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public interface IPropertyHandler
+    public interface IModulePropertyHandler
     {
         bool SetPropertyValue(object module, PropertyInfo property, string propertyValue);
     }

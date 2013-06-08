@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public interface IPropertyStringfier
+    public interface IModulePropertyStringfier
     {
         bool CanConvertToString(object module, PropertyInfo property, object propertyValue);
 

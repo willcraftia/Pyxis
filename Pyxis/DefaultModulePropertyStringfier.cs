@@ -7,11 +7,11 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public sealed class DefaultPropertyStringfier : IPropertyStringfier
+    public sealed class DefaultModulePropertyStringfier : IModulePropertyStringfier
     {
-        public static readonly DefaultPropertyStringfier Instance = new DefaultPropertyStringfier();
+        public static readonly DefaultModulePropertyStringfier Instance = new DefaultModulePropertyStringfier();
 
-        DefaultPropertyStringfier() { }
+        DefaultModulePropertyStringfier() { }
 
         public bool CanConvertToString(object module, PropertyInfo property, object propertyValue)
         {

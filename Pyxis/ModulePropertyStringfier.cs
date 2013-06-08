@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public sealed class ModulePropertyStringfier : IPropertyStringfier
+    public sealed class ModulePropertyStringfier : IModulePropertyStringfier
     {
         ModuleBundleBuilder moduleBundleBuilder;
 

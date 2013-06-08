@@ -7,11 +7,11 @@ using System.Reflection;
 
 namespace Pyxis
 {
-    public sealed class DefaultPropertyHandler : IPropertyHandler
+    public sealed class DefaultModulePropertyHandler : IModulePropertyHandler
     {
-        public static readonly DefaultPropertyHandler Instance = new DefaultPropertyHandler();
+        public static readonly DefaultModulePropertyHandler Instance = new DefaultModulePropertyHandler();
 
-        DefaultPropertyHandler() { }
+        DefaultModulePropertyHandler() { }
 
         public bool SetPropertyValue(object module, PropertyInfo property, string propertyValue)
         {
