@@ -24,13 +24,13 @@ namespace Pyxis
 
         static readonly DefaultModuleTypeHandler defaultTypeHandler = new DefaultModuleTypeHandler();
 
-        ModuleTypeRegistory typeRegistory;
+        ModuleTypeRegistry typeRegistory;
 
         Dictionary<Type, IModuleTypeHandler> typeHandlerMap;
 
         ModuleInfoCollection moduleInfoCache = new ModuleInfoCollection();
 
-        public ModuleInfoManager(ModuleTypeRegistory typeRegistory)
+        public ModuleInfoManager(ModuleTypeRegistry typeRegistory)
         {
             if (typeRegistory == null) throw new ArgumentNullException("typeRegistory");
 

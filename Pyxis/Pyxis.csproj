@@ -48,7 +48,7 @@
     <Compile Include="ModuleInfoManager.cs" />
     <Compile Include="ModulePropertyHandler.cs" />
     <Compile Include="ModulePropertyStringfier.cs" />
-    <Compile Include="ModuleTypeRegistory.cs" />
+    <Compile Include="ModuleTypeRegistry.cs" />
     <Compile Include="DefaultModulePropertyHandler.cs" />
     <Compile Include="DefaultModulePropertyStringfier.cs" />
     <Compile Include="IModulePropertyHandler.cs" />

@@ -7,15 +7,15 @@ using System.Collections.Generic;
 
 namespace Pyxis
 {
-    public sealed class ModuleTypeRegistory
+    public sealed class ModuleTypeRegistry
     {
         Dictionary<string, Type> typeDictionary;
 
         Dictionary<Type, string> reverseTypeDictionary;
 
-        public ModuleTypeRegistory() { }
+        public ModuleTypeRegistry() { }
 
-        public ModuleTypeRegistory(int capacity)
+        public ModuleTypeRegistry(int capacity)
         {
             typeDictionary = new Dictionary<string, Type>(capacity);
             reverseTypeDictionary = new Dictionary<Type, string>(capacity);
