@@ -20,6 +20,8 @@ namespace Pyxis
 
         Dictionary<string, string> initializeMethodNameMap = new Dictionary<string, string>();
 
+        List<ModulePropertyDefinition> propertyDefinitions = new List<ModulePropertyDefinition>();
+
         public List<IModulePropertyStringfier> PropertyStringfiers { get; private set; }
 
         public ModuleBundleBuilder(ModuleInfoManager moduleInfoManager)
@@ -155,11 +157,6 @@ namespace Pyxis
 
                 if (moduleInfo.PropertyCount == 0) continue;
 
-                // TODO
-                // 作業用リストはフィールドで定義する。
-
-                var workingList = new List<ModulePropertyDefinition>();
-
                 for (int j = 0; j < moduleInfo.PropertyCount; j++)
                 {
                     var property = moduleInfo.GetProperty(j);
@@ -191,10 +188,14 @@ namespace Pyxis
                         Name = propertyName,
                         Value = stringValue
                     };
-                    workingList.Add(propertyDefinition);
+                    propertyDefinitions.Add(propertyDefinition);
                 }
 
-                definition.Modules[i].Properties = workingList.ToArray();
+                if (0 < propertyDefinitions.Count)
+                {
+                    definition.Modules[i].Properties = propertyDefinitions.ToArray();
+                    propertyDefinitions.Clear();
+                }
             }
 
             return definition;
